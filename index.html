@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" data-brand="tidyridge">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Competitor pricing brief, sourced and reviewed, in one business day</title>
+<meta name="description" content="Every plan, price and positioning claim for 3 or 5 named competitors, each figure linked to the public page it came from, reviewed by a person before it reaches you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:wght@500;600&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* Tokens: the Tidyridge slice of the design system (design-system/theme.css, light theme). Keep in step. */
+  :root {
+    --color-background: #F8F7F4; --color-surface: #FFFFFF; --color-text-primary: #1F2421; --color-text-secondary: #4A524D;
+    --color-text-muted: #6A706B; --color-border: #E6E4DE; --color-primary: #2B6762; --color-primary-hover: #225450;
+    --color-on-primary: #FFFFFF; --color-primary-subtle: #EAF0EF; --color-accent: #A15C2E; --color-success: #2F7D3B;
+    --color-success-subtle: #EDF4EE; --color-focus-ring: #2B6762;
+    --font-display: "Newsreader", Georgia, "Times New Roman", serif; --font-body: "Figtree", "Segoe UI", system-ui, Arial, sans-serif;
+    --radius-card: 6px; --radius-button: 4px; --radius-control: 4px;
+    --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-6: 24px; --space-8: 32px; --space-12: 48px; --space-16: 64px;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--color-background); color: var(--color-text-primary); font-family: var(--font-body); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  body { margin: 0; }
+  a { color: var(--color-primary); }
+  :focus-visible { outline: 2px solid var(--color-focus-ring); outline-offset: 2px; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 var(--space-6); }
+  header { padding: var(--space-6) 0; }
+  .wordmark { font-family: var(--font-display); font-weight: 500; letter-spacing: -0.01em; font-size: 22px; color: var(--color-text-primary); text-decoration: none; }
+  h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(34px, 5vw, 48px); line-height: 1.12; letter-spacing: -0.015em; margin: var(--space-12) 0 var(--space-4); max-width: 18ch; }
+  h2 { font-family: var(--font-display); font-weight: 600; font-size: 28px; line-height: 1.2; margin: var(--space-16) 0 var(--space-4); }
+  h3 { font-size: 18px; font-weight: 600; margin: 0 0 var(--space-2); }
+  .lead { font-size: 20px; color: var(--color-text-secondary); max-width: 60ch; margin: 0 0 var(--space-8); }
+  .bullets { list-style: none; padding: 0; margin: 0 0 var(--space-8); display: grid; gap: var(--space-4); }
+  .bullets li { padding-left: 28px; position: relative; max-width: 62ch; }
+  .bullets li::before { content: ""; position: absolute; left: 0; top: 9px; width: 14px; height: 14px; border-radius: 50%; background: var(--color-primary); border: 1.5px solid var(--color-primary); }
+  .card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-card); padding: var(--space-6); }
+  .sample { display: grid; gap: var(--space-3); }
+  .sample .tag { display: inline-block; font-size: 13px; font-weight: 600; color: var(--color-accent); letter-spacing: 0.02em; text-transform: uppercase; }
+  .sample p { margin: 0; color: var(--color-text-secondary); }
+  .packages { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: var(--space-4); margin: 0 0 var(--space-8); }
+  .packages .card { display: flex; flex-direction: column; }
+  .packages .card .btn { margin-top: auto; align-self: flex-start; }
+  .price { font-family: var(--font-display); font-size: 40px; font-weight: 600; line-height: 1; margin: var(--space-2) 0 var(--space-3); }
+  .price small { font-family: var(--font-body); font-size: 15px; font-weight: 400; color: var(--color-text-muted); }
+  .packages p { margin: 0 0 var(--space-4); color: var(--color-text-secondary); }
+  .btn { display: inline-block; font: 600 16px/1 var(--font-body); padding: 14px 20px; border-radius: var(--radius-button); border: 1px solid transparent; cursor: pointer; text-decoration: none; }
+  .btn-primary { background: var(--color-primary); color: var(--color-on-primary); }
+  .btn-primary:hover { background: var(--color-primary-hover); }
+  .btn-secondary { background: var(--color-surface); color: var(--color-primary); border-color: var(--color-primary); }
+  .btn[aria-disabled="true"] { opacity: 0.55; cursor: not-allowed; }
+  form { display: grid; gap: var(--space-4); }
+  label { display: grid; gap: 6px; font-weight: 500; font-size: 15px; }
+  label span.hint { font-weight: 400; color: var(--color-text-muted); font-size: 14px; }
+  input, textarea, select { font: 400 16px var(--font-body); color: var(--color-text-primary); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-control); padding: 11px 12px; width: 100%; }
+  input:hover, textarea:hover, select:hover { border-color: var(--color-text-muted); }
+  textarea { min-height: 96px; resize: vertical; }
+  fieldset { border: 1px solid var(--color-border); border-radius: var(--radius-card); padding: var(--space-4); margin: 0; display: grid; gap: var(--space-3); }
+  legend { padding: 0 6px; font-weight: 600; font-size: 15px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3); }
+  @media (max-width: 560px) { .row { grid-template-columns: 1fr; } }
+  .notice { background: var(--color-success-subtle); border: 1px solid var(--color-success); border-radius: var(--radius-card); padding: var(--space-4); color: var(--color-text-primary); font-size: 15px; }
+  .error { color: var(--color-accent); font-size: 15px; margin: 0; min-height: 1.2em; }
+  dl { display: grid; gap: var(--space-4); margin: 0; }
+  dt { font-weight: 600; }
+  dd { margin: 4px 0 0; color: var(--color-text-secondary); max-width: 66ch; }
+  footer { margin: var(--space-16) 0 var(--space-12); padding-top: var(--space-6); border-top: 1px solid var(--color-border); color: var(--color-text-muted); font-size: 14px; }
+  footer p { max-width: 70ch; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+</style>
+</head>
+<body>
+<header class="wrap"><a class="wordmark" href="./">Tidyridge</a></header>
+
+<main class="wrap">
+  <h1>Know exactly what your competitors charge, by tomorrow.</h1>
+  <p class="lead">A competitor pricing brief: every plan, price and positioning claim for 3 or 5 named competitors, each figure linked to the public page it came from, reviewed by a person before it reaches you.</p>
+
+  <ul class="bullets">
+    <li><strong>Sourced, not guessed.</strong> Every price links to the official page and the date it was read. If a price is not public, the brief says so instead of estimating.</li>
+    <li><strong>Reviewed by a person.</strong> Nothing is sent until a founder has opened every cited page and ticked a five-point checklist.</li>
+    <li><strong>Delivered in 1 business day</strong> as a PDF-ready document you can forward to your team or investors.</li>
+  </ul>
+
+  <section class="card sample" aria-labelledby="sample-h">
+    <span class="tag">Read a real one first</span>
+    <h3 id="sample-h">Sample brief: three email-marketing tools, 5 pages</h3>
+    <p>Prepared with AI-assisted research of public web pages, and reviewed and approved by a human founder before it was sent. Every price and claim links to the page it came from, with the date it was retrieved.</p>
+    <p><a class="btn btn-secondary" href="mailto:tidyridge.briefs@gmail.com?subject=Please%20send%20the%20sample%20brief" data-sample-link>Request the sample brief by email</a></p>
+  </section>
+
+  <h2 id="packages">Two packages</h2>
+  <div class="packages">
+    <div class="card">
+      <h3>Brief, 3 competitors</h3>
+      <div class="price">$49 <small>one-time</small></div>
+      <p>Public pricing, plans and positioning of three competitors, every figure with its source link.</p>
+      <a class="btn btn-primary" href="#order" data-pick="brief-3">Order the 3-competitor brief</a>
+    </div>
+    <div class="card">
+      <h3>Brief, 5 competitors</h3>
+      <div class="price">$99 <small>one-time</small></div>
+      <p>The same for five competitors, with a short comparison of where you could differ.</p>
+      <a class="btn btn-primary" href="#order" data-pick="brief-5">Order the 5-competitor brief</a>
+    </div>
+  </div>
+
+  <h2 id="order">Order</h2>
+  <p class="lead" style="font-size:17px">Payment first, research second: the research costs real money to run. You pay on the next screen; a person then starts your brief.</p>
+
+  <form id="order-form" class="card" novalidate>
+    <div class="row">
+      <label>Your name <input name="customer_name" required maxlength="100" autocomplete="name"></label>
+      <label>Your email <span class="hint">the brief is sent here</span><input name="customer_contact" type="email" required maxlength="200" autocomplete="email"></label>
+    </div>
+    <label>Your business, in one or two sentences <textarea name="business" required maxlength="2000"></textarea></label>
+    <label>What you most want to know <span class="hint">optional</span><textarea name="question" maxlength="2000"></textarea></label>
+    <label>Package
+      <select name="package_id" required>
+        <option value="brief-3">Brief, 3 competitors ($49)</option>
+        <option value="brief-5">Brief, 5 competitors ($99)</option>
+      </select>
+    </label>
+    <fieldset id="competitors">
+      <legend>Competitors <span class="hint">name and website; 3 for the small brief, 5 for the large</span></legend>
+    </fieldset>
+    <p class="error" id="error" role="alert" aria-live="polite"></p>
+    <div>
+      <button class="btn btn-primary" type="submit" id="submit">Continue to payment</button>
+    </div>
+    <p class="hint" style="margin:0;color:var(--color-text-muted);font-size:14px">Full refund if the brief is not delivered within 2 business days. Your order is never used as a sample.</p>
+  </form>
+
+  <div class="notice" id="done" hidden>
+    <strong>Order received.</strong> Your order number is <span id="order-number"></span>. Finish payment on the page that opens; once it clears, a founder starts your research and you get the brief by email within one business day.
+  </div>
+
+  <h2>Questions</h2>
+  <dl>
+    <dt>Is this automated?</dt><dd>The research is; the review and the decision to send are done by a person.</dd>
+    <dt>Where do the prices come from?</dt><dd>Only from public pages, each linked. No private or negotiated prices.</dd>
+    <dt>Can I pick any competitor?</dt><dd>Any company with a public website. If one has no public pricing, the brief says so and you can swap it before we start, at no cost.</dd>
+    <dt>What if a price is wrong?</dt><dd>Tell us within 7 days and we re-check the page and reissue the brief.</dd>
+    <dt>Who sees my order?</dt><dd>Only the founder reviewing it. Your order is never used as a sample.</dd>
+  </dl>
+</main>
+
+<footer class="wrap">
+  <p>Prices and plans change. A brief shows what the cited pages said on the dates shown. It covers public information only, does not include private or negotiated prices, and is not legal, tax or financial advice.</p>
+  <p>Tidyridge is operated by an individual proprietor in India. Contact: tidyridge.briefs@gmail.com</p>
+</footer>
+
+<script>
+  // Configuration the server fills in before serving this page. Until it does, the form explains that ordering is not open yet.
+  // ORDER_ENDPOINT: a public endpoint that creates the order (see docs/order-page.md, option a) or a Tally form URL (option b).
+  // PAYMENT_LINKS: the provider's hosted checkout per package. The order id is appended as metadata so the webhook can match it.
+  const CONFIG = window.TIDYRIDGE_ORDER_CONFIG || { ORDER_ENDPOINT: "", PROVIDER: "stripe", PAYMENT_LINKS: { "brief-3": "", "brief-5": "" }, ORDER_ID_KEY: "tidyridge_order_id" };
+  const COUNT = { "brief-3": 3, "brief-5": 5 };
+
+  const form = document.getElementById("order-form");
+  const pkg = form.elements.package_id;
+  const fs = document.getElementById("competitors");
+  const err = document.getElementById("error");
+  const submit = document.getElementById("submit");
+
+  function renderCompetitors() {
+    const n = COUNT[pkg.value] || 3;
+    const existing = [...fs.querySelectorAll(".row")].map(r => ({ name: r.querySelector("[name=cname]").value, url: r.querySelector("[name=curl]").value }));
+    fs.querySelectorAll(".row").forEach(r => r.remove());
+    for (let i = 0; i < n; i++) {
+      const row = document.createElement("div"); row.className = "row";
+      row.innerHTML = `<label><span class="sr-only">Competitor ${i + 1} name</span><input name="cname" required maxlength="100" placeholder="Competitor ${i + 1} name"></label>
+                       <label><span class="sr-only">Competitor ${i + 1} website</span><input name="curl" type="url" maxlength="300" placeholder="https://"></label>`;
+      if (existing[i]) { row.querySelector("[name=cname]").value = existing[i].name; row.querySelector("[name=curl]").value = existing[i].url; }
+      fs.appendChild(row);
+    }
+  }
+  pkg.addEventListener("change", renderCompetitors);
+  document.querySelectorAll("[data-pick]").forEach(a => a.addEventListener("click", () => { pkg.value = a.dataset.pick; renderCompetitors(); }));
+  renderCompetitors();
+
+  if (!CONFIG.ORDER_ENDPOINT) {
+    submit.setAttribute("aria-disabled", "true");
+    err.textContent = "Online ordering opens shortly, once payments are activated. Until then, email tidyridge.briefs@gmail.com with your competitor names and we will reply within one business day.";
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (submit.getAttribute("aria-disabled") === "true") return;
+    err.textContent = "";
+    if (!form.reportValidity()) return;
+    const competitors = [...fs.querySelectorAll(".row")].map(r => ({ name: r.querySelector("[name=cname]").value.trim(), url: r.querySelector("[name=curl]").value.trim() }));
+    const body = {
+      kind: "customer",
+      customer_name: form.elements.customer_name.value.trim(),
+      customer_contact: form.elements.customer_contact.value.trim(),
+      business: form.elements.business.value.trim(),
+      question: form.elements.question.value.trim() || null,
+      package_id: pkg.value,
+      competitors
+    };
+    submit.setAttribute("aria-disabled", "true");
+    try {
+      const res = await fetch(CONFIG.ORDER_ENDPOINT, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body) });
+      if (!res.ok) throw new Error((await res.json().catch(() => ({}))).detail || "The order could not be saved. Please try again.");
+      const { id } = await res.json();
+      document.getElementById("order-number").textContent = "#" + id;
+      form.hidden = true; document.getElementById("done").hidden = false;
+      // Stripe Payment Links read ?client_reference_id=...; Razorpay Payment Pages read ?notes[<key>]=... (the key from payments.yaml).
+      const link = CONFIG.PAYMENT_LINKS[pkg.value];
+      const param = CONFIG.PROVIDER === "razorpay" ? "notes[" + CONFIG.ORDER_ID_KEY + "]" : "client_reference_id";
+      if (link) window.location.href = link + (link.includes("?") ? "&" : "?") + encodeURIComponent(param) + "=" + encodeURIComponent(id);
+    } catch (ex) {
+      err.textContent = ex.message;
+      submit.removeAttribute("aria-disabled");
+    }
+  });
+</script>
+</body>
+</html>
