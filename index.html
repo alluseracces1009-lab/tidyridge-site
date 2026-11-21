@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tidyridge — competitor pricing briefs, sourced and reviewed</title>
-<meta name="description" content="Every plan, price and positioning claim for 3 or 5 named competitors, each figure linked to its public source, reviewed by a person. Delivered in one business day.">
+<title>Tidyridge — 2027 Student Planner &amp; market-research tools</title>
+<meta name="description" content="The 2027 Student Planner — digital + printable, ₹399 — plus simple one-time market-research tools for founders. Instant download.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%232B6762'/%3E%3Crect x='9' y='17' width='4' height='7' rx='2' fill='%23BFE3DC'/%3E%3Crect x='14' y='13' width='4' height='11' rx='2' fill='%23E9D9C2'/%3E%3Crect x='19' y='8' width='4' height='16' rx='2' fill='%23ffffff'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;1,500&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -21,7 +21,6 @@
   html { background: var(--bg); color: var(--ink); font: 400 17px/1.55 var(--body); -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
   body { margin: 0; min-height: 100vh; position: relative; overflow-x: hidden; }
 
-  /* ambient background: soft colour fields the glass sits on */
   .bg { position: fixed; inset: 0; z-index: -1; overflow: hidden; background:
       radial-gradient(60% 50% at 85% 5%, #D7EAE5 0%, transparent 70%),
       radial-gradient(50% 45% at 10% 20%, #F1E4D0 0%, transparent 70%),
@@ -33,7 +32,6 @@
 
   .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
 
-  /* nav */
   nav { position: sticky; top: 0; z-index: 10; padding: 14px 0; }
   nav .bar { display: flex; align-items: center; justify-content: space-between; padding: 10px 18px; border-radius: 999px;
     background: var(--glass-strong); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%);
@@ -45,7 +43,6 @@
   nav .links a:hover { color: var(--teal); }
   @media (max-width: 640px) { nav .links { display: none; } }
 
-  /* hero */
   .hero { padding: 72px 0 40px; display: grid; grid-template-columns: 1.15fr .85fr; gap: 40px; align-items: center; }
   @media (max-width: 860px) { .hero { grid-template-columns: 1fr; padding-top: 48px; } }
   .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--teal);
@@ -60,83 +57,40 @@
   .btn-primary:hover { background: var(--teal-deep); }
   .btn-ghost { background: var(--glass); color: var(--ink); border-color: var(--line); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
   .btn-ghost:hover { background: #fff; }
-  .btn[aria-disabled="true"] { opacity: .55; cursor: not-allowed; box-shadow: none; }
   .trust { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 22px; font-size: 14px; color: var(--muted); }
   .trust span::before { content: "✓"; color: var(--teal); font-weight: 700; margin-right: 6px; }
 
-  /* glass preview card in the hero: what a brief looks like */
   .glass { background: var(--glass); backdrop-filter: blur(22px) saturate(150%); -webkit-backdrop-filter: blur(22px) saturate(150%);
     border: 1px solid var(--glass-border); border-radius: var(--r); box-shadow: var(--shadow); }
-  .preview { padding: 22px 22px 18px; transform: rotate(-1.2deg); }
-  .preview .tag { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--amber); }
-  .preview h3 { font: 600 20px/1.25 var(--display); margin: 6px 0 14px; }
-  .preview table { width: 100%; border-collapse: collapse; font-size: 14px; }
-  .preview th, .preview td { text-align: left; padding: 9px 8px; border-bottom: 1px solid var(--line); }
-  .preview th { font-weight: 600; color: var(--muted); font-size: 12.5px; letter-spacing: .03em; text-transform: uppercase; }
-  .preview td:last-child { color: var(--teal); font-weight: 600; }
-  .preview .foot { margin-top: 12px; font-size: 12.5px; color: var(--muted); }
-  @media (max-width: 860px) { .preview { transform: none; } }
+  .card-tag { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--amber); }
 
-  /* sections */
   section { padding: 48px 0; }
   h2 { font: 600 clamp(28px, 3.4vw, 36px)/1.15 var(--display); letter-spacing: -0.015em; margin: 0 0 8px; }
   .sub { color: var(--ink-2); margin: 0 0 28px; max-width: 60ch; }
 
   .three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
   @media (max-width: 760px) { .three { grid-template-columns: 1fr; } }
-  .step { padding: 24px; }
-  .step .icon { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: rgba(43,103,98,.12); margin-bottom: 14px; }
-  .step .icon svg { width: 23px; height: 23px; stroke: var(--teal-deep); fill: none; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
-  .step .eyebrow-s { display: block; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--teal); margin-bottom: 4px; }
+  .step { padding: 24px; display: block; text-decoration: none; color: inherit; transition: transform .15s ease, box-shadow .15s ease; }
+  a.step:hover { transform: translateY(-3px); box-shadow: 0 26px 54px -24px rgba(27,33,30,0.34), 0 1px 0 rgba(255,255,255,0.8) inset; }
+  .step .eyebrow-s { display: block; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--teal); margin-bottom: 6px; }
   .step h3 { font-size: 17.5px; font-weight: 600; margin: 0 0 6px; }
   .step p { margin: 0; color: var(--ink-2); font-size: 15.5px; }
+  .step .go { display: inline-block; margin-top: 10px; font-size: 14px; font-weight: 600; color: var(--teal); }
 
-  /* pricing */
   .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
   @media (max-width: 760px) { .plans { grid-template-columns: 1fr; } }
   .plan { padding: 28px; display: flex; flex-direction: column; position: relative; }
-  .plan.featured { background: linear-gradient(160deg, rgba(43,103,98,.92), rgba(31,79,75,.96)); color: #fff; border-color: rgba(255,255,255,.25); }
-  .plan.featured .price small, .plan.featured p, .plan.featured li { color: rgba(255,255,255,.82); }
-  .plan .pill { position: absolute; top: 18px; right: 18px; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 5px 10px; border-radius: 999px; background: rgba(255,255,255,.18); border: 1px solid rgba(255,255,255,.35); }
   .plan h3 { font-size: 18px; font-weight: 600; margin: 0; }
   .price { font: 600 46px/1 var(--display); margin: 14px 0 6px; letter-spacing: -0.02em; }
   .price small { font: 400 14px var(--body); color: var(--muted); margin-left: 6px; letter-spacing: 0; }
   .plan p { color: var(--ink-2); margin: 0 0 18px; font-size: 15.5px; }
-  .plan ul { list-style: none; padding: 0; margin: 0 0 24px; display: grid; gap: 9px; font-size: 15px; color: var(--ink-2); }
-  .plan li::before { content: "—"; opacity: .5; margin-right: 8px; }
   .plan .btn { margin-top: auto; align-self: flex-start; }
-  .plan.featured .btn-primary { background: #fff; color: var(--teal-deep); box-shadow: none; }
-  .plan.featured .btn-primary:hover { background: #F2F8F6; }
-
-  /* order */
-  .order { padding: 28px; }
-  form { display: grid; gap: 14px; }
-  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  @media (max-width: 560px) { .row { grid-template-columns: 1fr; } }
-  label { display: grid; gap: 6px; font-size: 14.5px; font-weight: 500; }
-  .hint { font-weight: 400; color: var(--muted); font-size: 13px; }
-  input, textarea, select { font: 400 15.5px var(--body); color: var(--ink); background: rgba(255,255,255,.7); border: 1px solid var(--line); border-radius: var(--r-sm); padding: 12px 13px; width: 100%; transition: border-color .15s, box-shadow .15s; }
-  input:focus, textarea:focus, select:focus { outline: none; border-color: var(--teal); box-shadow: 0 0 0 3px rgba(43,103,98,.15); }
-  textarea { min-height: 84px; resize: vertical; }
-  fieldset { border: 1px dashed var(--line); border-radius: var(--r-sm); padding: 14px; margin: 0; display: grid; gap: 10px; }
-  legend { padding: 0 6px; font-size: 14px; font-weight: 600; }
-  .status { font-size: 14px; color: var(--amber); min-height: 1.2em; margin: 0; }
-  .done { padding: 18px; border-radius: var(--r-sm); background: rgba(47,125,59,.10); border: 1px solid rgba(47,125,59,.3); font-size: 15px; }
-
-  /* faq */
-  details { padding: 16px 20px; margin-bottom: 10px; }
-  summary { cursor: pointer; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center; }
-  summary::-webkit-details-marker { display: none; }
-  summary::after { content: "+"; font-size: 20px; color: var(--teal); font-weight: 400; }
-  details[open] summary::after { content: "–"; }
-  details p { margin: 10px 0 2px; color: var(--ink-2); font-size: 15.5px; max-width: 66ch; }
 
   footer { padding: 40px 0 48px; color: var(--muted); font-size: 13.5px; }
   footer .glass { padding: 18px 22px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center; }
   footer a { color: var(--teal); text-decoration: none; }
   :focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
-  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-  @media (prefers-reduced-motion: reduce) { .btn { transition: none; } html { scroll-behavior: auto; } }
+  @media (prefers-reduced-motion: reduce) { .btn, .step { transition: none; } html { scroll-behavior: auto; } }
 </style>
 </head>
 <body>
@@ -152,113 +106,72 @@
     </svg>
     <span>Tidyridge</span>
   </a>
-  <div class="links"><a href="#how">How it works</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></div>
-  <a class="btn btn-primary" href="#order" style="padding:10px 16px">Order a brief</a>
+  <div class="links"><a href="#tools">Tools</a><a href="#briefs">Custom briefs</a></div>
+  <a class="btn btn-primary" href="https://payhip.com/b/3MHiy" style="padding:10px 16px">Get the Planner</a>
 </div></nav>
 
 <main class="wrap">
   <section class="hero">
     <div>
-      <span class="eyebrow">Competitor pricing briefs</span>
-      <h1>Know what your competitors charge, <em>by tomorrow.</em></h1>
-      <p class="lead">Every plan, price and positioning claim for 3 or 5 competitors you name. Each figure links to the public page it came from, and a person checks it before it reaches you.</p>
+      <span class="eyebrow">New · for students</span>
+      <h1>2027 Student <em>Planner</em></h1>
+      <p class="lead">Plan smarter. Study better. Own your semester. Digital + printable.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="#pricing">See pricing</a>
-        <a class="btn btn-ghost" href="mailto:tidyridge.briefs@tidyridge.in?subject=Please%20send%20the%20sample%20brief">Get the sample brief</a>
+        <a class="btn btn-primary" href="https://payhip.com/b/3MHiy">Get the Planner — ₹399 →</a>
       </div>
-      <div class="trust"><span>Sourced, never estimated</span><span>Human-reviewed</span><span>1 business day</span></div>
+      <div class="trust"><span>Digital + printable</span><span>Instant download</span><span>One-time ₹399</span></div>
     </div>
-    <aside class="glass preview" aria-label="Example of a brief">
-      <span class="tag">From a brief</span>
-      <h3>Project tools: starter plans compared</h3>
-      <table>
-        <thead><tr><th>Competitor</th><th>Starter plan</th><th>Source</th></tr></thead>
-        <tbody>
-          <tr><td>Competitor A</td><td>₹499 / mo, 10 users</td><td>pricing page ↗</td></tr>
-          <tr><td>Competitor B</td><td>₹999 / mo, 25 users</td><td>pricing page ↗</td></tr>
-          <tr><td>Competitor C</td><td>Not public</td><td>stated as such</td></tr>
-        </tbody>
-      </table>
-      <p class="foot">Illustrative layout. Real briefs name the companies and link every figure, with the date it was read.</p>
+    <aside class="glass" style="padding:28px;display:flex;flex-direction:column;align-items:flex-start" aria-label="2027 Student Planner">
+      <span class="card-tag">Best for students</span>
+      <h3 style="font:600 22px/1.25 var(--display);margin:8px 0 10px">2027 Student Planner</h3>
+      <p style="color:var(--ink-2);font-size:15.5px;margin:0 0 6px">Digital + printable. Download once, use it on any device or print it out.</p>
+      <div class="price">₹399<small>one-time</small></div>
+      <a class="btn btn-primary" href="https://payhip.com/b/3MHiy" style="margin-top:12px">Get the Planner →</a>
     </aside>
   </section>
 
-  <section id="how">
-    <h2>How it works</h2>
-    <p class="sub">You name the competitors. We do the reading. You get a document you can forward to your team or investors.</p>
+  <section id="tools">
+    <h2>Other tools</h2>
+    <p class="sub">Simple, one-time market-research tools for founders and small businesses.</p>
     <div class="three">
-      <div class="glass step">
-        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.5"/></svg></div>
-        <span class="eyebrow-s">Step 1</span>
-        <h3>Tell us who to compare</h3><p>Your business in a sentence, the question on your mind, and 3 or 5 competitor websites.</p>
-      </div>
-      <div class="glass step">
-        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><line x1="15.6" y1="15.6" x2="20.5" y2="20.5"/></svg></div>
-        <span class="eyebrow-s">Step 2</span>
-        <h3>We research public pages only</h3><p>Pricing pages, plan tables and positioning copy. If a price isn't public, the brief says so instead of guessing.</p>
-      </div>
-      <div class="glass step">
-        <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6.5L9.2 17.3 4 12.1"/></svg></div>
-        <span class="eyebrow-s">Step 3</span>
-        <h3>A person reviews, then you receive it</h3><p>Every cited page is opened and checked against a five-point list before the PDF is emailed to you.</p>
-      </div>
+      <a class="glass step" href="https://payhip.com/b/O7P36">
+        <span class="eyebrow-s">Best value</span>
+        <h3>Market Intelligence Bundle</h3>
+        <p>Kit + Report together — <strong>₹699</strong>.</p>
+        <span class="go">View →</span>
+      </a>
+      <a class="glass step" href="https://payhip.com/b/oPKQ4">
+        <span class="eyebrow-s">Spreadsheet</span>
+        <h3>Market Intelligence Kit</h3>
+        <p>Competitor tracker, pricing calculator &amp; positioning — ₹499.</p>
+        <span class="go">View →</span>
+      </a>
+      <a class="glass step" href="https://payhip.com/b/uhQV5">
+        <span class="eyebrow-s">Template</span>
+        <h3>Market Research Report Template</h3>
+        <p>Branded, client-ready Word template — ₹399.</p>
+        <span class="go">View →</span>
+      </a>
     </div>
   </section>
 
-  <section id="pricing">
-    <h2>Two packages, one-time price</h2>
-    <p class="sub">No subscription. Pay once, get the brief within one business day. Prices in Indian rupees; international cards are welcome.</p>
+  <section id="briefs">
+    <h2>Custom competitor briefs</h2>
+    <p class="sub">Prefer done-for-you? We research 3 or 5 named competitors — every price linked to its public source, reviewed by a person, delivered in one business day.</p>
     <div class="plans">
       <div class="glass plan">
         <h3>Brief, 3 competitors</h3>
-        <div class="price">₹3,999<small>one-time · about $48</small></div>
-        <p>For a focused question about your closest rivals.</p>
-        <ul><li>Public pricing and plans of 3 competitors</li><li>How each one positions itself</li><li>Every figure linked to its source</li></ul>
-        <a class="btn btn-primary" href="#order" data-pick="brief-3">Order the 3-competitor brief</a>
+        <div class="price">₹3,999<small>one-time</small></div>
+        <p>A focused look at your closest rivals.</p>
+        <a class="btn btn-ghost" href="mailto:tidyridge.briefs@tidyridge.in?subject=3-competitor%20brief">Enquire by email</a>
       </div>
-      <div class="glass plan featured">
-        <span class="pill">Most useful</span>
+      <div class="glass plan">
         <h3>Brief, 5 competitors</h3>
-        <div class="price">₹7,999<small>one-time · about $96</small></div>
-        <p>For a full view of the market you're entering or repricing in.</p>
-        <ul><li>Everything in the 3-competitor brief, for 5</li><li>A short comparison of where you could differ</li><li>Gaps and uncertainty stated plainly</li></ul>
-        <a class="btn btn-primary" href="#order" data-pick="brief-5">Order the 5-competitor brief</a>
+        <div class="price">₹7,999<small>one-time</small></div>
+        <p>A fuller view of the market you're entering.</p>
+        <a class="btn btn-ghost" href="mailto:tidyridge.briefs@tidyridge.in?subject=5-competitor%20brief">Enquire by email</a>
       </div>
     </div>
-  </section>
-
-  <section id="order">
-    <h2>Order</h2>
-    <p class="sub">Payment first, research second. You pay on the next screen; a person then starts your brief.</p>
-    <form id="order-form" class="glass order" novalidate>
-      <div class="row">
-        <label>Your name<input name="customer_name" required maxlength="100" autocomplete="name"></label>
-        <label>Email <span class="hint">the brief is sent here</span><input name="customer_contact" type="email" required maxlength="200" autocomplete="email"></label>
-      </div>
-      <label>Your business, in a sentence or two<textarea name="business" required maxlength="2000"></textarea></label>
-      <label>What you most want to know <span class="hint">optional</span><textarea name="question" maxlength="2000"></textarea></label>
-      <label>Package
-        <select name="package_id" required>
-          <option value="brief-3">Brief, 3 competitors (₹3,999)</option>
-          <option value="brief-5">Brief, 5 competitors (₹7,999)</option>
-        </select>
-      </label>
-      <fieldset id="competitors"><legend>Competitors</legend></fieldset>
-      <p class="status" id="status" role="status" aria-live="polite"></p>
-      <div class="cta-row">
-        <button class="btn btn-primary" type="submit" id="submit">Continue to payment</button>
-        <span class="hint">Full refund if not delivered within 2 business days.</span>
-      </div>
-    </form>
-    <div class="done" id="done" hidden><strong>Order received.</strong> Your order number is <span id="order-number"></span>. Finish payment on the page that opens; a person then starts your research and you get the brief by email within one business day.</div>
-  </section>
-
-  <section id="faq">
-    <h2>Questions</h2>
-    <details class="glass"><summary>Is this automated?</summary><p>The research is. The review, and the decision to send, are done by a person.</p></details>
-    <details class="glass"><summary>Where do the prices come from?</summary><p>Only from public pages, each linked with the date it was read. No private or negotiated prices, and nothing estimated.</p></details>
-    <details class="glass"><summary>What if a price is wrong?</summary><p>Tell us within 7 days. We re-check the page and reissue the brief at no cost.</p></details>
-    <details class="glass"><summary>Who sees my order?</summary><p>Only the person reviewing it. Your order is never used as a sample or shared.</p></details>
   </section>
 </main>
 
@@ -274,52 +187,5 @@
     </span>
   </div>
 </footer>
-
-<script>
-  const CONFIG = window.TIDYRIDGE_ORDER_CONFIG || { ORDER_ENDPOINT: "", PROVIDER: "razorpay", PAYMENT_LINKS: { "brief-3": "", "brief-5": "" }, ORDER_ID_KEY: "tidyridge_order_id" };
-  const COUNT = { "brief-3": 3, "brief-5": 5 };
-  const form = document.getElementById("order-form"), pkg = form.elements.package_id, fs = document.getElementById("competitors"), status = document.getElementById("status"), submit = document.getElementById("submit");
-
-  function renderCompetitors() {
-    const n = COUNT[pkg.value] || 3;
-    const existing = [...fs.querySelectorAll(".row")].map(r => ({ name: r.querySelector("[name=cname]").value, url: r.querySelector("[name=curl]").value }));
-    fs.querySelectorAll(".row").forEach(r => r.remove());
-    for (let i = 0; i < n; i++) {
-      const row = document.createElement("div"); row.className = "row";
-      row.innerHTML = `<label><span class="sr-only">Competitor ${i + 1} name</span><input name="cname" required maxlength="100" placeholder="Competitor ${i + 1} name"></label>
-                       <label><span class="sr-only">Competitor ${i + 1} website</span><input name="curl" type="url" maxlength="300" placeholder="https://"></label>`;
-      if (existing[i]) { row.querySelector("[name=cname]").value = existing[i].name; row.querySelector("[name=curl]").value = existing[i].url; }
-      fs.appendChild(row);
-    }
-  }
-  pkg.addEventListener("change", renderCompetitors);
-  document.querySelectorAll("[data-pick]").forEach(a => a.addEventListener("click", () => { pkg.value = a.dataset.pick; renderCompetitors(); }));
-  renderCompetitors();
-
-  if (!CONFIG.ORDER_ENDPOINT) {
-    submit.setAttribute("aria-disabled", "true");
-    status.textContent = "Online ordering opens shortly, once payments are activated. Until then, email tidyridge.briefs@tidyridge.in with your competitor names.";
-  }
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    if (submit.getAttribute("aria-disabled") === "true") return;
-    status.textContent = "";
-    if (!form.reportValidity()) return;
-    const competitors = [...fs.querySelectorAll(".row")].map(r => ({ name: r.querySelector("[name=cname]").value.trim(), url: r.querySelector("[name=curl]").value.trim() }));
-    const body = { kind: "customer", customer_name: form.elements.customer_name.value.trim(), customer_contact: form.elements.customer_contact.value.trim(), business: form.elements.business.value.trim(), question: form.elements.question.value.trim() || null, package_id: pkg.value, competitors };
-    submit.setAttribute("aria-disabled", "true");
-    try {
-      const res = await fetch(CONFIG.ORDER_ENDPOINT, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body) });
-      if (!res.ok) throw new Error((await res.json().catch(() => ({}))).detail || "The order could not be saved. Please try again.");
-      const { id } = await res.json();
-      document.getElementById("order-number").textContent = "#" + id;
-      form.hidden = true; document.getElementById("done").hidden = false;
-      const link = CONFIG.PAYMENT_LINKS[pkg.value];
-      const param = CONFIG.PROVIDER === "razorpay" ? "notes[" + CONFIG.ORDER_ID_KEY + "]" : "client_reference_id";
-      if (link) window.location.href = link + (link.includes("?") ? "&" : "?") + encodeURIComponent(param) + "=" + encodeURIComponent(id);
-    } catch (ex) { status.textContent = ex.message; submit.removeAttribute("aria-disabled"); }
-  });
-</script>
 </body>
 </html>
